@@ -18,6 +18,23 @@
   gap: 15px;
   margin-bottom: 30px;
 }
+.footer ul li a {
+  color: #fff;
+  position: relative;
+}
+.footer ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+.footer ul li:hover a::after {
+  width: 100%;
+}
 .copyright-text {
   color: gray;
   font-size: 14px;

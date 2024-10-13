@@ -1,13 +1,13 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./Player.css";
 import back_arrow_icon from "../../assets/back_arrow_icon.png";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function Player() {
-
   const navigate = useNavigate();
 
-  const {id} = useParams();
+  const { id } = useParams();
 
   const [apiData, setApiData] = useState({
     name: "",
@@ -37,7 +37,12 @@ export default function Player() {
 
   return (
     <div className="player">
-      <img src={back_arrow_icon} onClick={() => {navigate(-2)}}/>
+      <img
+        src={back_arrow_icon}
+        onClick={() => {
+          navigate(-2);
+        }}
+      />
       <iframe
         src={`http://www.youtube.com/embed/${apiData.key}`}
         width="90%"
@@ -47,7 +52,7 @@ export default function Player() {
         allowFullScreen
       ></iframe>
       <div className="player-info">
-        <p>{apiData.published_at.slice(0,10)}</p>
+        <p>{apiData.published_at.slice(0, 10)}</p>
         <p>{apiData.name}</p>
         <p>{apiData.type}</p>
       </div>

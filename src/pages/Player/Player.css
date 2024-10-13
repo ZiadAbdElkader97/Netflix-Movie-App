@@ -21,3 +21,9 @@
     justify-content: space-between;
     width: 90%;
 }
+@media (min-width: 320px) and (max-width: 480px) {
+    .player-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
